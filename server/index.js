@@ -30,7 +30,7 @@ app.use('/api/items', requireAuth, itemsRouter);
 app.use('/api/bills', requireAuth, billsRouter);
 
 // ─── Catch-all → serve React frontend ────────────────────────────────────────
-app.get('*', (_req, res) => {
+app.use((_req, res) => {
   res.sendFile(path.join(frontendDist, 'index.html'));
 });
 
