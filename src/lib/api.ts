@@ -4,7 +4,7 @@ const BASE = '/api';
 
 // ─── Generic fetch helper ─────────────────────────────────────────────────────
 async function request<T>(path: string, options?: RequestInit): Promise<T> {
-  const token = localStorage.getItem('token');
+  const token = sessionStorage.getItem('token');
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
   };
@@ -19,7 +19,7 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
   if (!res.ok) {
     const body = await res.json().catch(() => ({}));
     if (res.status === 401) {
-      localStorage.removeItem('token');
+      sessionStorage.removeItem('token');
       window.location.href = '/login';
     }
     throw new Error(body.error || `Request failed: ${res.status}`);

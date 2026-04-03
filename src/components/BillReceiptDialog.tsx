@@ -74,11 +74,6 @@ export function BillReceiptDialog({ bill, open, onOpenChange }: BillReceiptDialo
             <div class="info-cell"><label>${t('receipt.customer')}:</label> ${bill.customerName || '-'}</div>
             <div class="info-cell"><label>GSTIN:</label> ${bill.customerGstin || '-'}</div>
           </div>
-          <div class="info-row">
-            <div class="info-cell"><label>${t('billing.bankName')}:</label> S.B.I. RAJHARA</div>
-            <div class="info-cell"><label>${t('billing.accountNo')}:</label> 35922017430</div>
-            <div class="info-cell"><label>${t('billing.ifscCode')}:</label> SBIN0002887</div>
-          </div>
 
           <table>
             <thead>
@@ -176,17 +171,6 @@ export function BillReceiptDialog({ bill, open, onOpenChange }: BillReceiptDialo
             </div>
             <div className="p-2 px-3">
               <span className="font-semibold">GSTIN:</span> {bill.customerGstin || '-'}
-            </div>
-          </div>
-          <div className="grid grid-cols-3 border-b border-border text-sm">
-            <div className="p-2 px-3 border-r border-border">
-              <span className="font-semibold">{t('billing.bankName')}:</span> S.B.I. RAJHARA
-            </div>
-            <div className="p-2 px-3 border-r border-border">
-              <span className="font-semibold">{t('billing.accountNo')}:</span> 35922017430
-            </div>
-            <div className="p-2 px-3">
-              <span className="font-semibold">{t('billing.ifscCode')}:</span> SBIN0002887
             </div>
           </div>
 
